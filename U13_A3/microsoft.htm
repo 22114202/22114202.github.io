@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html> 
+<a href="index.htm">
+<h4 align="center"> <img src="images/Website_Banner_1.png" style=display: block: margin: auto: alt="banner"> </a>
+
+ 
+<head>
+<title>
+Mobile World Station
+</title>
+</head>
+
+<style>
+a:link {color: #0000FF;}
+a:visited {color: #E4A0F7;}
+a:hover {color: #ADD8E6;}
+body {font-family: Arial, Helvetica, sans-serif;
+background-color: #fbfbfb;
+h1 {color: #44763E;}
+p {color: #161716;}
+h3 {color: #44763E ;}
+.navigation {
+display: flex;
+justify-content: space-around;
+padding: 10px;
+background-color: grey;
+}
+</style>
+</style>
+<style type="text/css">
+
+
+#informationbar{
+position: fixed;
+left: 0;
+width: 100%;
+text-indent: 5px;
+padding: 5px 0;
+background-color: grey;
+border-bottom: 1px solid black;
+font: bold 12px Verdana;
+}
+
+* html #informationbar{ /*IE6 hack*/
+position: absolute;
+width: expression(document.compatMode=="CSS1Compat"? document.documentElement.clientWidth+"px" : body.clientWidth+"px");
+}
+
+</style>
+
+<script type="text/javascript">
+
+
+function informationbar(){
+this.displayfreq="always"
+this.content='<a href="javascript:informationbar.close()"><img src="close.gif" style="width: 14px; height: 14px; float: right; border: 0; margin-right: 5px" /></a>'
+}
+
+informationbar.prototype.setContent=function(data){
+this.content=this.content+data
+document.write('<div id="informationbar" style="top: -500px">'+this.content+'</div>')
+}
+
+informationbar.prototype.animatetoview=function(){
+var barinstance=this
+if (parseInt(this.barref.style.top)<0){
+this.barref.style.top=parseInt(this.barref.style.top)+5+"px"
+setTimeout(function(){barinstance.animatetoview()}, 50)
+}
+else{
+if (document.all && !window.XMLHttpRequest)
+this.barref.style.setExpression("top", 'document.compatMode=="CSS1Compat"? document.documentElement.scrollTop+"px" : body.scrollTop+"px"')
+else
+this.barref.style.top=0
+}
+}
+
+informationbar.close=function(){
+document.getElementById("informationbar").style.display="none"
+if (this.displayfreq=="session")
+document.cookie="infobarshown=1;path=/"
+}
+
+informationbar.prototype.setfrequency=function(type){
+this.displayfreq=type
+}
+
+informationbar.prototype.initialize=function(){
+if (this.displayfreq=="session" && document.cookie.indexOf("infobarshown")==-1 || this.displayfreq=="always"){
+this.barref=document.getElementById("informationbar")
+this.barheight=parseInt(this.barref.offsetHeight)
+this.barref.style.top=this.barheight*(-1)+"px"
+this.animatetoview()
+}
+}
+
+window.onunload=function(){
+this.barref=null
+}
+
+</script>
+
+
+<script type="text/javascript">
+
+
+var infobar=new informationbar()
+
+
+infobar.initialize()
+</script>
+<div class="navigation">
+<a href="about.htm">About</a>:
+<a href="contact.htm">Contact Us</a>:
+<a href="phone_station.htm">Phone Stations</a>:
+<a href="apple.htm">Apple</a>:
+<a href="samsung.htm">Samsung</a>:
+<a href="microsoft.htm">Microsoft</a>:
+<a href="sim.htm">SIM Deals</a>
+
+
+</div>
+</p>
+
+
+<style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        #image-container {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        #image-container img {
+            max-width: 30%;
+            height: 50%;
+        }
+    </style>
+</head>
+<body>
+<h2>Microsoft: Pioneering Innovation in Mobile and Technology</h2>
+<p>Discover how Microsoft’s cutting-edge software, including Windows, and mobile solutions, like the Surface line, continue to shape the tech landscape, driving productivity, creativity, and connectivity..</p>
+<h2>About Microsoft</h2>
+<p>Microsoft is a global technology leader known for its software, hardware, and cloud services. With products like Windows, Office 365, and the Surface devices, Microsoft continues to innovate,
+ offering powerful solutions for both personal and business use. The company is also a major player in cloud computing with Azure, enabling businesses worldwide to scale and grow with advanced, secure, and flexible technology..</p>
+
+</head>
+ <style>
+   
+    .carousel-container {
+      position: relative;
+      width: 60%;
+      max-width: 500px;
+      overflow: hidden; /* Hide images that are out of view */
+    }
+
+    .carousel {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel img {
+      width: 100%; /* Show only one image at a time */
+      height: 50%;
+    }
+
+    .carousel-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2rem;
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.5);
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    .prev {
+      left: 10px;
+    }
+
+    .next {
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="carousel-container">
+    <button class="carousel-arrow prev" onclick="moveSlide(-1)">&#10094;</button>
+    <div class="carousel">
+      <img src="microsoft_surface_pro.png" alt="Microsoft Surface Pro" width="250" height="100">
+            <img src="galaxy_book4.png" alt="Galaxy Book 4" width="250" height="250">
+            <img src="dell_inspiration.png" alt="Dell Inspiration 3515" width="250" height="100">
+            <img src="hp17.png" alt="HP 17" width="250" height="100">
+    </div>
+    <button class="carousel-arrow next" onclick="moveSlide(1)">&#10095;</button>
+  </div>
+ 
+  
+  <script>
+    let currentIndex = 0;
+
+    function moveSlide(direction) {
+      const slides = document.querySelectorAll('.carousel img');
+      const totalSlides = slides.length;
+      currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
+      const offset = -currentIndex * 100; // Move to the next or previous image
+      document.querySelector('.carousel').style.transform = `translateX(${offset}%)`;
+    }
+  </script>
+</body>
+</html>
